@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="en" ng-app="avenirApp">
+<head>
+  <meta charset="utf-8">
+  <title>My AngularJS App</title>
+  <link rel="stylesheet" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"/>
+  <link rel="stylesheet" href="css/main.css"/>
+</head>
+<body class="container">
+  <div ng-include="'partials/navbar.html'"></div>
+  <div ng-view></div>
+
+  <hr>
+  <div>Angular seed app: v<span app-version></span></div>
+
+
+  <!-- Libs -->
+  <script src="app/lib/jquery.js"></script>
+  <script src="/bower_components/angular/angular.js"></script>
+  <script src="/bower_components/angular-route/angular-route.js"></script>
+  <script src="/bower_components/angular-resource/angular-resource.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap.js"></script>
+  <script src="/bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+
+  <!-- Application Files -->
+  <script src="js/app.js"></script>
+
+  <script src="js/services/ProductsSvc.js"></script>
+  <script src="js/services/CustomersSvc.js"></script>
+  <script src="js/controllers/ProductsCtrl.js"></script>
+  <script src="js/controllers/CustomersCtrl.js"></script>
+  <script src="js/filters/filters.js"></script>
+  <script src="js/directives/tsFloatingItems.js"></script>
+
+  <script src="js/common.js"></script>
+</body>
+</html>

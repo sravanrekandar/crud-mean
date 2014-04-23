@@ -1,0 +1,7 @@
+[
+    {"name": "Pen", "id": "prod1"},
+    {"name": "Pencil", "id": "prod2"},
+    {"name": "Eraser", "id": "prod3"},
+    {"name": "Ruler", "id": "prod4"},
+    {"name": "Notepad", "id": "prod5"}
+]

@@ -1,0 +1,32 @@
+<div novalidate ng-init="init()">
+    <form class="form-inline" name="newProductForm"
+          ng-submit="createProduct(newProductForm.$valid)" >
+        <div class="form-group"
+             ng-class="{ 'has-error' : newProductForm.$invalid && !newProductForm.newProduct.$pristine }">
+            <label for="new-product">New Product</label>
+            <input type="text"
+                   name="newProduct"
+                   class="form-control"
+                   placeholder="Enter New Product"
+                   required
+                   ng-model="newProduct"
+                   >
+        </div>
+        <button type="submit" class="btn btn-default" >Add Product</button>
+        <p ng-show="newProduct.$invalid && !newProduct.$pristine" class="help-block">Invalid Product Name.</p>
+    </form>
+     <hr>
+    <div class="well">
+        <h4>Available Products</h4>
+        <ts-floating-items ng-model="products" remove-button="true" remove-item-method="removeProduct" update-item-method="updateProduct" editable="true"></ts-floating-items>
+        <ts-floating-items ng-model="products"></ts-floating-items>
+    </div>
+
+    <div class='container-fluid form-inline'>
+        <h4>Asynchronous results</h4>
+        <pre>Model: {{asyncSelected | json}}</pre>
+        <input type="text" ng-model="asyncSelected" placeholder="Products loaded via $http" typeahead="product as product.name + '-' + product.id for product in getFilteredProducts($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="form-control">
+        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+        <button class="btn btn-default" ng-click>Add</button>
+    </div>
+</div>

@@ -11,8 +11,6 @@ describe('ProductsSvc', function () {
         $httpBackend = _$httpBackend_;
         $rootScope = _$rootScope_;
         url = '/product';
-
-
     }));
 
     afterEach(function () {
@@ -36,6 +34,16 @@ describe('ProductsSvc', function () {
     });
 
     describe('Methods - Functionality: ', function () {
+        it('query() : should make a GET request to the server.', function () {
+            var message;
+            $httpBackend.whenGET(url).respond({message: 'Returning all products'});
+            $httpBackend.expectGET(url);
+            ProductsSvc.query().then(function (response) {
+                message = response.data.message;
+            });
+            $httpBackend.flush();
+            expect(message).toBe('Returning all products');
+        });
         it('get() : should make a GET request to the server When no prodID passed.', function () {
             var message;
             $httpBackend.whenGET(url + '/undefined').respond({message: 'Returning all products'});

@@ -4,7 +4,7 @@ avenir-mean
 Manage records.
 Tech Stac: MongoDB, Express, AngularJS, NodeJS
 
-An apllication to practive E2E flow.
+An apllication to practice E2E flow.
 
 
 Build instructions

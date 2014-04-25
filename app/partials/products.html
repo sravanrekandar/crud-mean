@@ -17,16 +17,9 @@
     </form>
      <hr>
     <div class="well">
+        <p class="alert-info">Note: Click on the products to edit.</p>
         <h4>Available Products</h4>
         <ts-floating-items ng-model="products" remove-button="true" remove-item-method="removeProduct" update-item-method="updateProduct" editable="true"></ts-floating-items>
         <ts-floating-items ng-model="products"></ts-floating-items>
-    </div>
-
-    <div class='container-fluid form-inline'>
-        <h4>Asynchronous results</h4>
-        <pre>Model: {{asyncSelected | json}}</pre>
-        <input type="text" ng-model="asyncSelected" placeholder="Products loaded via $http" typeahead="product as product.name + '-' + product.id for product in getFilteredProducts($viewValue) | filter:$viewValue" typeahead-loading="loadingLocations" class="form-control">
-        <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
-        <button class="btn btn-default" ng-click>Add</button>
     </div>
 </div>

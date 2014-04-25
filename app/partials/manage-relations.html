@@ -1,0 +1,17 @@
+<div class='container-fluid form-inline'>
+    <p class="alert-info">Info: Asynchronous results <edit class=""></edit></p>
+    <pre>Model: {{asyncSelected | json}}</pre>
+    <input type="text"
+           ng-model="selectedProduct"
+           placeholder="Search Products"
+           typeahead="product as product.name + '-' + product.id for product in getFilteredProducts($viewValue) | filter:$viewValue"
+           typeahead-loading="loadingProducts"
+           ng-keyup="addThisProduct($event, selectedProduct)"
+           class="form-control">
+    <i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+    <div class="well">
+        <h4>Selected Products</h4>
+        <p ng-show="selectedProducts.length==0">[No Selected Products]</p>
+        <ts-floating-items ng-model="selectedProducts" remove-button="true"></ts-floating-items>
+    </div>
+</div>

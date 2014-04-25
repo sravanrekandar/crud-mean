@@ -6,14 +6,6 @@ angular.module('avenirApp.controllers')
                 $scope.products = response.data;
             });
         };
-
-        $scope.getFilteredProducts = function(val) {
-            return ProductsSvc.filter({name: val}).then(function(response){
-                var products = response.data;
-                return products;
-            });
-        };
-
         $scope.createProduct = function(valid){
             if(!valid || $scope.newProduct === '') {return;}
             ProductsSvc.save({

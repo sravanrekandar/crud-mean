@@ -1,26 +1,30 @@
 'use strict';
-angular.module('avenirApp').controller('ManageRelationsCtrl', ['$scope', 'ProductsSvc', 'lodash', function($scope, ProductsSvc, lodash){
+angular.module('avenirApp').controller('ManageRelationsCtrl', ['$scope', 'ProductsSvc', 'lodash', function ($scope, ProductsSvc, lodash) {
     $scope.selectedProducts = [];
     $scope.selectedProduct = '';
+    $scope.lastResultingProducts = [];
     $scope.loadingLocations = false;
-    $scope.addThisProduct = function(evt, product){
-      if(evt.keyCode === 13) {
-          $scope.addProduct(product);
-      }
+    $scope.addThisProduct = function (evt, product) {
+        if (evt.keyCode === 13) {
+            $scope.addProduct(product);
+        }
     };
-    $scope.addProduct = function(product) {
-        if(typeof product !== 'object' ){return;}
+    $scope.addProduct = function (product) {
+        if (typeof product !== 'object') {
+            return;
+        }
         var existingElements = lodash.filter($scope.selectedProducts, product);
-        if(existingElements.length === 0) {
+        if (existingElements.length === 0) {
             $scope.selectedProducts.push(product);
         }
-        $scope.selectedProduct= '';
+        $scope.selectedProduct = '';
     };
-    $scope.getFilteredProducts = function(val) {
-        $scope.loadingLocations
-        return ProductsSvc.filter({name: val}).then(function(response){
+    $scope.getFilteredProducts = function (val) {
+        $scope.loadingLocations = true;
+        return ProductsSvc.filter({name: val}).then(function (response) {
             var products = response.data;
-            $scope.loadingLocations
+            $scope.loadingLocations = false;
+            $scope.lastResultingProducts = products; // This is useful for test cases
             return products;
         });
     };

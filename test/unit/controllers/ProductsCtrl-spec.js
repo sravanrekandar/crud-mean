@@ -28,9 +28,7 @@ describe('Controller: ProductsController', function () {
         it('Should have the method refreshProducts', function () {
             expect(scope.refreshProducts).toBeDefined();
         });
-        it('Should have the method getFilteredProducts', function () {
-            expect(scope.getFilteredProducts).toBeDefined();
-        });
+
         it('Should have the method createProduct', function () {
             expect(scope.createProduct).toBeDefined();
         });
@@ -45,7 +43,7 @@ describe('Controller: ProductsController', function () {
     describe('Methods -- : ', function () {
         var deferred,
             promise;
-        beforeEach(function(){
+        beforeEach(function () {
             deferred = _$q.defer();
             promise = deferred.promise;
         });
@@ -64,19 +62,6 @@ describe('Controller: ProductsController', function () {
             expect(productService.query).toHaveBeenCalled();
             expect(scope.products).toBe(resolvedValue);
         });
-
-        it('getFilteredProducts() method should return a list of products', function () {
-            var resolvedValue = [];
-            spyOn(productService, 'filter').andReturn(deferred.promise);
-
-            var resultingProductsPromise = scope.getFilteredProducts();
-            deferred.resolve({data: resolvedValue});
-            _$rootScope.$apply();
-            expect(productService.filter).toHaveBeenCalled();
-            // TODO: check whether the then() is returning the products list
-            //expect(resultingProducts).toBe(resolvedValue);
-        });
-
         it('createProduct() method should send data and refresh products', function () {
             var resolvedValue = [];
             spyOn(productService, 'save').andReturn(deferred.promise);

@@ -5,6 +5,7 @@ module.exports = function (config) {
 
         files: [
             'bower_components/jquery/dist/jquery.js',
+            'bower_components/lodash/dist/lodash.js',
             'bower_components/angular/angular.js',
             'bower_components/angular-route/angular-route.js',
             'bower_components/angular-resource/angular-resource.js',
@@ -17,7 +18,7 @@ module.exports = function (config) {
             'app/js/services/*.js',
             'app/js/controllers/*.js',
             'app/js/directives/*.js',
-            'test/unit/directives/*.js'
+            'test/unit/**/*.js'
         ],
 
         autoWatch: true,

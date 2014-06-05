@@ -79,7 +79,8 @@ npm run test-single-run
 
 
 ### End to end testing
-
+Yet to be implemented
+<!--
 The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
 special features for Angular applications.
@@ -113,7 +114,7 @@ npm run protractor
 
 This script will execute the end-to-end tests against the application being hosted on the
 development server.
-
+-->
 ## Updating Angular
 
 Previously we recommended that you merge in changes to angular-seed into your own fork of the project.

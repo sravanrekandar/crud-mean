@@ -1,0 +1,14 @@
+{
+    "name": "customers",
+    "version": "0.0.0",
+    "description": "Keeps track of customers",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "keywords": [
+        "customers"
+    ],
+    "author": "SRAVAN",
+    "license": "ISC"
+}

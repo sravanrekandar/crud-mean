@@ -1,18 +1,22 @@
-avenir-mean
+crud-mean
 ===========
+A CRUD apllication to demonstrate E2E flow through MEAN.
 
-Manage records.
-Tech Stac: MongoDB, Express, AngularJS, NodeJS
-
-An apllication to practice E2E flow.
+Tech Stac
+```
+    MongoDB
+    Express
+    AngularJS
+    NodeJS
+```
 
 
 Build instructions
 ==================
-The application is adopted from angular-seed. The build instructions would be same except the repo link.
+The application structure is adopted from angular-seed. The build instructions would be same except the repo link.
 
-    git clone https://github.com/sravanrekandar/avenir-mean.git
-    cd avenir-mean
+    git clone https://github.com/sravanrekandar/crud-mean.git
+    cd crud-mean
     
 ### Install Dependencies
 
@@ -43,7 +47,7 @@ this server is:
 npm start
 ```
 
-Now browse to the app at `http://localhost:8000/app/index.html`.
+Now browse to the app at `http://localhost:1405/`.
 
 ## Testing
 
@@ -79,7 +83,8 @@ npm run test-single-run
 
 
 ### End to end testing
-
+Yet to be implemented
+<!--
 The angular-seed app comes with end-to-end tests, again written in [Jasmine][jasmine]. These tests
 are run with the [Protractor][protractor] End-to-End test runner.  It uses native events and has
 special features for Angular applications.
@@ -113,7 +118,7 @@ npm run protractor
 
 This script will execute the end-to-end tests against the application being hosted on the
 development server.
-
+-->
 ## Updating Angular
 
 Previously we recommended that you merge in changes to angular-seed into your own fork of the project.

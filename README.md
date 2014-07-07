@@ -2,9 +2,13 @@ avenir-mean
 ===========
 
 Manage records.
-Tech Stac: MongoDB, Express, AngularJS, NodeJS
+A CRUD apllication to demonstrate E2E flow of a MEAN application.
+Tech Stac:
+    MongoDB 
+    Express
+    AngularJS
+    NodeJS
 
-An apllication to practice E2E flow.
 
 
 Build instructions

@@ -1,14 +1,14 @@
 avenir-mean
 ===========
+A CRUD apllication to demonstrate E2E flow through MEAN.
 
-Manage records.
-A CRUD apllication to demonstrate E2E flow of a MEAN application.
-Tech Stac:
-    MongoDB 
+Tech Stac
+```
+    MongoDB
     Express
     AngularJS
     NodeJS
-
+```
 
 
 Build instructions

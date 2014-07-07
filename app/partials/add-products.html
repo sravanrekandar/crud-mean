@@ -1,0 +1,33 @@
+<div>
+	<div class="modal-header">
+		<h3 class="modal-title">Add Products to {{customer.name}}</h3>
+	</div>
+	<div class="modal-body">
+		<alert type="warning" close="closeAlert($index)" ng-show="alert.msg">{{alert.msg}}</alert>
+		<div class="form-inline">
+			<input type="text"
+			   ng-model="selectedProduct"
+			   placeholder="Search Products"
+			   typeahead="product as product.name + '-' + product.id for product in getFilteredProducts($viewValue) | filter:$viewValue"
+			   typeahead-loading="loadingProducts"
+			   ng-onkeyup = "addThisProduct(selectedProduct, $event)"
+			   class="form-control">
+   			<i ng-show="loadingLocations" class="glyphicon glyphicon-refresh"></i>
+			<button class="btn btn-default form-control" ng-click="addThisProduct(selectedProduct)">Add</button>
+		</div>
+		<div class="well">
+			<h4>Products to be added</h4>
+			<p ng-show="selectedProducts.length==0">[No Selected Products]</p>
+			<ts-floating-items ng-model="selectedProducts" remove-button="true"></ts-floating-items>
+		</div>
+		<div class="well">
+			<h4>Existing products</h4>
+			<p ng-show="selectedProducts.length==0">[No Products]</p>
+			<ts-floating-items ng-model="customer.products"></ts-floating-items>
+		</div>
+	</div>
+	<div class="modal-footer">
+		<button class="btn btn-primary" ng-click="ok()">Add Products</button>
+		<button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+	</div>
+</div>

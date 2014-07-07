@@ -1,18 +1,28 @@
 <h2>Customers</h2>
-<div class="row">
+<div class="row" ng-init="init()">
     <div class="col-md-8">
         <table class="table table-condensed table-hover">
             <thead>
                 <th>Customer Name and Id</th>
                 <th>Associated Products</th>
+				<th></th>
             </thead>
             <tbody>
-                <tr>
-                    <td>Name - id</td>
-                    <td>Product</td>
-                </tr><tr>
-                    <td>Name - id</td>
-                    <td>Product</td>
+                <tr ng-repeat="c in customers">
+                    <td>{{c.name}} - {{c.id}}</td>
+                    <td ng-init="rp = removeProduct(c)">
+						<ts-floating-items 
+							ng-model="c.products" 
+							remove-button="true"
+							remove-item-method="rp"
+							editable="false">
+						</ts-floating-items>
+					</td>
+					<td>
+						<button class="btn btn-default btn-sm" ng-click="addProducts(c)">
+							Add Products
+						</button>
+					<td>
                 </tr>
             </tbody>
         </table>

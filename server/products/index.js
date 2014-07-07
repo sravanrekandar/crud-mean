@@ -9,15 +9,22 @@ var generateNewId = function () {
     }
     return id;
 }
-exports.get = function (req, res) {
-    var id = req.param('id'),
-        product;
-    if (id === undefined) {
-        res.send(products);
+
+var getProduct = function(id) {
+	var product;
+	if (id === undefined) {
+        return products;
     } else {
         product = _.find(products, {id: id});
-        res.json(product);
+        return product;
     }
+};
+
+exports.getProduct = getProduct;
+// To handle requests from client
+exports.get = function (req, res) {
+    var id = req.param('id');
+    res.send(getProduct(id));
 };
 
 exports.update = function (req, res) {

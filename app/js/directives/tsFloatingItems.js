@@ -30,17 +30,20 @@ angular.module('avenirApp.directives').directive('tsFloatingItems', ['$document'
             var oldVal = '';
             scope.itemInEditMode = null;
             scope.itemNameCache = '';
-            scope.editable = (scope.editable && scope.editable !== 'false') ? true : false;
+            scope.isEditable = (scope.editable && (scope.editable === 'true' || scope.editable === true));
             scope.displayCloseButton = (scope.removeButton && scope.removeButton !== 'false') ? true : false;
-            scope.removeItem = scope.removeItemMethod || function(item) {
-                var index = scope.items.indexOf(item);
-                scope.items.splice(index, 1);
-            };
+			scope.removeItem = function(prod){
+				if(!scope.removeItemMethod) {
+					return;
+				}
+				scope.removeItemMethod(prod);
+			};
             scope.updateItem = scope.updateItemMethod || function(item) {
                 // Already updated through ng-model
             };
             scope.edit = function(item){
-                if(!scope.editable) {return;}
+				console.log(typeof scope.isEditable);
+                if(!scope.isEditable) {return;}
                 oldVal = item.name;
                 item._editmode = true;
                 if(scope.itemInEditMode !== item && scope.itemInEditMode !== null) {

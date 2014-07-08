@@ -19,7 +19,6 @@ angular.module('avenirApp', [
 config(['$routeProvider', function ($routeProvider) {
     $routeProvider.when('/products', {templateUrl: 'partials/products.html', controller: 'ProductsCtrl'});
     $routeProvider.when('/customers', {templateUrl: 'partials/customers.html', controller: 'CustomersCtrl'});
-    $routeProvider.when('/manage-relations', {templateUrl: 'partials/manage-relations.html', controller: 'ManageRelationsCtrl'});
     $routeProvider.otherwise({redirectTo: '/products'});
 }])
 .value('lodash', _);

@@ -4,7 +4,7 @@ A CRUD apllication to demonstrate E2E flow through MEAN.
 
 Tech Stac
 ```
-    MongoDB
+    MongoDB <<Yet to be implemented in this app>>
     Express
     AngularJS
     NodeJS
